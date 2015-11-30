@@ -1,7 +1,9 @@
 # Readme
 
 1) Follow the instruction at http://openstate-sdn.org/ to install OpenState on a Mininet 2.2.1 VM
+
 2) Configure your VM Manager to forward VM's TCP port 8080 to localhost's TCP port 8080
+
 3) SSH in your VM with X11 forwarding enabled:
 
 	
