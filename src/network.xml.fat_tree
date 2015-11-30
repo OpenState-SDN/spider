@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<network xmlns="http://sndlib.zib.de/network" version="1.0">
+ <networkStructure>
+  <nodes coordinatesType="geographical">
+   <node id="N1">
+    <coordinates>
+     <x>437.5</x>
+     <y>750</y>
+    </coordinates>
+   </node>
+   <node id="N2">
+    <coordinates>
+     <x>687.5</x>
+     <y>750</y>
+    </coordinates>
+   </node>
+   <node id="N3">
+    <coordinates>
+     <x>937.5</x>
+     <y>750</y>
+    </coordinates>
+   </node>
+   <node id="N4">
+    <coordinates>
+     <x>125</x>
+     <y>250</y>
+    </coordinates>
+   </node>
+   <node id="N5">
+    <coordinates>
+     <x>250</x>
+     <y>250</y>
+    </coordinates>
+   </node>
+   <node id="N6">
+    <coordinates>
+     <x>125</x>
+     <y>125</y>
+    </coordinates>
+   </node>
+   <node id="N7">
+    <coordinates>
+     <x>250</x>
+     <y>125</y>
+    </coordinates>
+   </node>
+   <node id="N8">
+    <coordinates>
+     <x>375</x>
+     <y>250</y>
+    </coordinates>
+   </node>
+   <node id="N9">
+    <coordinates>
+     <x>500</x>
+     <y>250</y>
+    </coordinates>
+   </node>
+   <node id="N10">
+    <coordinates>
+     <x>375</x>
+     <y>125</y>
+    </coordinates>
+   </node>
+   <node id="N11">
+    <coordinates>
+     <x>500</x>
+     <y>125</y>
+    </coordinates>
+   </node>
+   <node id="N12">
+    <coordinates>
+     <x>625</x>
+     <y>250</y>
+    </coordinates>
+   </node>
+   <node id="N13">
+    <coordinates>
+     <x>750</x>
+     <y>250</y>
+    </coordinates>
+   </node>
+      <node id="N14">
+    <coordinates>
+     <x>625</x>
+     <y>125</y>
+    </coordinates>
+   </node>
+      <node id="N15">
+    <coordinates>
+     <x>750</x>
+     <y>125</y>
+    </coordinates>
+   </node>
+      <node id="N16">
+    <coordinates>
+     <x>875</x>
+     <y>250</y>
+    </coordinates>
+   </node>
+      <node id="N17">
+    <coordinates>
+     <x>1000</x>
+     <y>250</y>
+    </coordinates>
+   </node>
+      <node id="N18">
+    <coordinates>
+     <x>875</x>
+     <y>125</y>
+    </coordinates>
+   </node>
+      <node id="N19">
+    <coordinates>
+     <x>1000</x>
+     <y>125</y>
+    </coordinates>
+   </node>
+      <node id="N20">
+    <coordinates>
+     <x>187.5</x>
+     <y>750</y>
+    </coordinates>
+   </node>
+  </nodes>
+  <links>
+   <link id="L1">
+    <source>N4</source>
+    <target>N7</target>
+    <setupCost>156.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>156.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>468.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L2">
+    <source>N5</source>
+    <target>N6</target>
+    <setupCost>272.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>272.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>816.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L3">
+    <source>N20</source>
+    <target>N16</target>
+    <setupCost>156.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>156.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>468.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L4">
+    <source>N2</source>
+    <target>N5</target>
+    <setupCost>186.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>186.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>558.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L5">
+    <source>N3</source>
+    <target>N17</target>
+    <setupCost>272.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>272.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>816.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L6">
+    <source>N2</source>
+    <target>N9</target>
+    <setupCost>227.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>227.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>711.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L7">
+    <source>N1</source>
+    <target>N16</target>
+    <setupCost>208.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>208.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>624.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L8">
+    <source>N8</source>
+    <target>N10</target>
+    <setupCost>181.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>181.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>542.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L9">
+    <source>N2</source>
+    <target>N13</target>
+    <setupCost>208.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>208.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>624.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L10">
+    <source>N11</source>
+    <target>N9</target>
+    <setupCost>250.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>250.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>750.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L11">
+    <source>N20</source>
+    <target>N4</target>
+    <setupCost>224.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>224.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>972.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L12">
+    <source>N16</source>
+    <target>N18</target>
+    <setupCost>224.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>224.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>972.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L13">
+    <source>N17</source>
+    <target>N19</target>
+    <setupCost>250.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>250.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>750.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L14">
+    <source>N12</source>
+    <target>N14</target>
+    <setupCost>165.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>165.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>495.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L15">
+    <source>N3</source>
+    <target>N13</target>
+    <setupCost>205.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>205.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>915.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L16">
+    <source>N8</source>
+    <target>N11</target>
+    <setupCost>142.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>142.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>426.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L17">
+    <source>N13</source>
+    <target>N15</target>
+    <setupCost>195.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>195.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>585.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L18">
+    <source>N1</source>
+    <target>N4</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L19">
+    <source>N20</source>
+    <target>N12</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+  </links>
+ </networkStructure>
+   <link id="L20">
+    <source>N9</source>
+    <target>N10</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+   <link id="L21">
+    <source>N1</source>
+    <target>N8</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L22">
+    <source>N3</source>
+    <target>N9</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L23">
+    <source>N16</source>
+    <target>N19</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L24">
+    <source>N20</source>
+    <target>N8</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L25">
+    <source>N2</source>
+    <target>N17</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L26">
+    <source>N3</source>
+    <target>N5</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L27">
+    <source>N17</source>
+    <target>N18</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L28">
+    <source>N12</source>
+    <target>N15</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L29">
+    <source>N4</source>
+    <target>N6</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L30">
+    <source>N12</source>
+    <target>N1</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L31">
+    <source>N13</source>
+    <target>N14</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+      <link id="L32">
+    <source>N5</source>
+    <target>N7</target>
+    <setupCost>294.0</setupCost>
+    <additionalModules>
+     <addModule>
+      <capacity>155.0</capacity>
+      <cost>294.0</cost>
+     </addModule>
+     <addModule>
+      <capacity>622.0</capacity>
+      <cost>882.0</cost>
+     </addModule>
+    </additionalModules>
+   </link>
+ <demands>
+  <demand id="D1">
+   <source>N6</source>
+   <target>N7</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+    <demand id="D2">
+   <source>N6</source>
+   <target>N10</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D3">
+   <source>N6</source>
+   <target>N11</target>
+   <demandValue>195.0</demandValue>
+   </demand>
+  <demand id="D4">
+   <source>N6</source>
+   <target>N14</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D5">
+   <source>N6</source>
+   <target>N15</target>
+   <demandValue>195.0</demandValue>
+  </demand>  
+  <demand id="D6">
+   <source>N6</source>
+   <target>N18</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D7">
+   <source>N6</source>
+   <target>N19</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+    <demand id="D8">
+   <source>N7</source>
+   <target>N6</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+    <demand id="D9">
+   <source>N7</source>
+   <target>N10</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D10">
+   <source>N7</source>
+   <target>N11</target>
+   <demandValue>195.0</demandValue>
+   </demand>
+  <demand id="D11">
+   <source>N7</source>
+   <target>N14</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D12">
+   <source>N7</source>
+   <target>N15</target>
+   <demandValue>195.0</demandValue>
+  </demand>  
+  <demand id="D13">
+   <source>N7</source>
+   <target>N18</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D14">
+   <source>N7</source>
+   <target>N19</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+
+  <demand id="D15">
+   <source>N10</source>
+   <target>N6</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+    <demand id="D16">
+   <source>N10</source>
+   <target>N7</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D17">
+   <source>N10</source>
+   <target>N11</target>
+   <demandValue>195.0</demandValue>
+   </demand>
+  <demand id="D18">
+   <source>N10</source>
+   <target>N14</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D19">
+   <source>N10</source>
+   <target>N15</target>
+   <demandValue>195.0</demandValue>
+  </demand>  
+  <demand id="D20">
+   <source>N10</source>
+   <target>N18</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D21">
+   <source>N10</source>
+   <target>N19</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+
+  <demand id="D22">
+   <source>N11</source>
+   <target>N6</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+    <demand id="D23">
+   <source>N11</source>
+   <target>N7</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D24">
+   <source>N11</source>
+   <target>N10</target>
+   <demandValue>195.0</demandValue>
+   </demand>
+  <demand id="D25">
+   <source>N11</source>
+   <target>N14</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D26">
+   <source>N11</source>
+   <target>N15</target>
+   <demandValue>195.0</demandValue>
+  </demand>  
+  <demand id="D27">
+   <source>N11</source>
+   <target>N18</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D28">
+   <source>N11</source>
+   <target>N19</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+
+
+  <demand id="D29">
+   <source>N14</source>
+   <target>N6</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+    <demand id="D30">
+   <source>N14</source>
+   <target>N7</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D31">
+   <source>N14</source>
+   <target>N10</target>
+   <demandValue>195.0</demandValue>
+   </demand>
+  <demand id="D32">
+   <source>N14</source>
+   <target>N11</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D33">
+   <source>N14</source>
+   <target>N15</target>
+   <demandValue>195.0</demandValue>
+  </demand>  
+  <demand id="D34">
+   <source>N14</source>
+   <target>N18</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D35">
+   <source>N14</source>
+   <target>N19</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+
+  <demand id="D36">
+   <source>N15</source>
+   <target>N6</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+    <demand id="D37">
+   <source>N15</source>
+   <target>N7</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D38">
+   <source>N15</source>
+   <target>N10</target>
+   <demandValue>195.0</demandValue>
+   </demand>
+  <demand id="D39">
+   <source>N15</source>
+   <target>N11</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D40">
+   <source>N15</source>
+   <target>N14</target>
+   <demandValue>195.0</demandValue>
+  </demand>  
+  <demand id="D41">
+   <source>N15</source>
+   <target>N18</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D42">
+   <source>N15</source>
+   <target>N19</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D43">
+   <source>N18</source>
+   <target>N6</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+    <demand id="D44">
+   <source>N18</source>
+   <target>N7</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D45">
+   <source>N18</source>
+   <target>N10</target>
+   <demandValue>195.0</demandValue>
+   </demand>
+  <demand id="D46">
+   <source>N18</source>
+   <target>N11</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D47">
+   <source>N18</source>
+   <target>N14</target>
+   <demandValue>195.0</demandValue>
+  </demand>  
+  <demand id="D48">
+   <source>N18</source>
+   <target>N15</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D49">
+   <source>N18</source>
+   <target>N19</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D50">
+   <source>N19</source>
+   <target>N6</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+    <demand id="D51">
+   <source>N19</source>
+   <target>N7</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D52">
+   <source>N19</source>
+   <target>N10</target>
+   <demandValue>195.0</demandValue>
+   </demand>
+  <demand id="D53">
+   <source>N19</source>
+   <target>N11</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D54">
+   <source>N19</source>
+   <target>N14</target>
+   <demandValue>195.0</demandValue>
+  </demand>  
+  <demand id="D55">
+   <source>N19</source>
+   <target>N15</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+  <demand id="D56">
+   <source>N19</source>
+   <target>N18</target>
+   <demandValue>195.0</demandValue>
+  </demand>
+
+
+ </demands>
+</network>
