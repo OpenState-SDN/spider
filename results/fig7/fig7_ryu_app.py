@@ -74,7 +74,7 @@ class OpenStateFaultTolerance(app_manager.RyuApp):
         # Associates dp_id to a dict associating port<->MAC address
         self.ports_mac_dict=dict()
 
-        # Needed by fault_tolerance_rest --> servira' ancora se memorizzo tutte le variabili qui??
+        # Needed by fault_tolerance_rest
         self.f_t_parser = f_t_parser
 
         # switch counter
@@ -236,10 +236,14 @@ class OpenStateFaultTolerance(app_manager.RyuApp):
         hub.sleep(5)
         print("Network is ready")
 
+        # Losses for the current realization as delta_6 varies
+        # losses = {delta_6_a: losses_1 , delta_6_b: losses_2 , ...}
         losses = {}
 
         LINK_FAULT = (3,4)
         REQUEST = (1,6)
+
+        # Gets realization parameters from environment variables
         INTERARRIVAL = float(os.environ['INTERARRIVAL'])
         LINK_DOWN = int(os.environ['LINK_DOWN'])
         LINK_UP = int(os.environ['LINK_UP'])
@@ -247,35 +251,29 @@ class OpenStateFaultTolerance(app_manager.RyuApp):
 
         print "\nTIMEOUTS LIST = "+str(f_t_parser.detection_timeouts_list)+"\n"
 
-        for idx,probe_timeouts in enumerate(f_t_parser.detection_timeouts_list):
+        for idx,detection_timeouts in enumerate(f_t_parser.detection_timeouts_list):
+            # Reset flow states and global states
             self.send_state_stats_request()
-            self.send_global_state_stats_request()                    
-            print "\n"+str(100*(idx+1)/len(f_t_parser.detection_timeouts_list))+"% - Setting timeout probe "+str(probe_timeouts)+"\n"
-            self.timeout_probe(probe_timeouts)
+            self.send_global_state_stats_request()        
+
+            # Configures detection timeouts
+            print "\n"+str(100*(idx+1)/len(f_t_parser.detection_timeouts_list))+"% - Detection timeouts (d6,d7,d5) = "+str(detection_timeouts)+"\n"
+            self.timeout_probe(detection_timeouts)
             hub.sleep(5)
            
             # To avoid syncronization we add a random sleep in [0,delta_6]
             # problem: hub.sleep() takes seconds, but we need to sleep in ms
-            sleep_interval = random.uniform(0,probe_timeouts[0])
+            sleep_interval = random.uniform(0,detection_timeouts[0])
             sleep_string = 'sleep %.3f' % round(sleep_interval,3)
-            cmd = 'sudo sh -c "'+sleep_string+';hping3 -1 -c '+str(PING_NUM)+' -i '+hping3_inter_str(INTERARRIVAL)+' '+self.mn_net['h'+str(REQUEST[1])].IP()+' > ~/ping.'+str(REQUEST[0])+'.'+str(REQUEST[1])+'.probe.'+str(probe_timeouts[0])+'.txt 2>&1 "'
+            ping_file_name = "~/ping."+str(REQUEST[0])+"."+str(REQUEST[1])+".probe."+str(detection_timeouts[0])+".txt"
+            cmd = 'sudo sh -c "'+sleep_string+';hping3 -1 -c '+str(PING_NUM)+' -i '+hping3_inter_str(INTERARRIVAL)+' '+self.mn_net['h'+str(REQUEST[1])].IP()+' > '+ping_file_name+' 2>&1 "'
             print('h'+str(REQUEST[0])+'# '+cmd)
-
-            MakeTerm=False
-            if MakeTerm==False: 
-                self.mn_net['h'+str(REQUEST[0])].cmd(cmd+' &')
-            else:            
-                self.f_t_parser.openXterm(mn_net=self.mn_net,hostname='h'+str(REQUEST[0]),cmd=cmd)
-                # wait for ping start
-                while(1):
-                    hub.sleep(1)
-                    t=datetime.now().time()
-                    if len(os.popen("pidof hping3").read()) > 0:
-                        break
+            self.mn_net['h'+str(REQUEST[0])].cmd(cmd+' &')
 
             hub.sleep(LINK_DOWN)
             print("LINK DOWN "+str(LINK_FAULT))
             self.set_link_down(LINK_FAULT[0],LINK_FAULT[1])
+
             hub.sleep(LINK_UP)
             print("LINK UP "+str(LINK_FAULT))
             self.set_link_up(LINK_FAULT[0],LINK_FAULT[1])
@@ -289,15 +287,16 @@ class OpenStateFaultTolerance(app_manager.RyuApp):
                 print(str(t.hour)+':'+str(t.minute)+':'+str(t.second))
                 if len(os.popen("pidof hping3").read()) == 0:
                     break
-	    hub.sleep(1)	    
+            hub.sleep(1)
 
-            rx=os.popen("cat ~/ping."+str(REQUEST[0])+"."+str(REQUEST[1])+".probe."+str(probe_timeouts[0])+".txt | grep transmitted | awk '{print $4}'").read() # received packets
-            tx=os.popen("cat ~/ping."+str(REQUEST[0])+"."+str(REQUEST[1])+".probe."+str(probe_timeouts[0])+".txt | grep transmitted | awk '{print $1}'").read() # transmitted packets
+            rx=os.popen("cat "+ping_file_name+" | grep transmitted | awk '{print $4}'").read() # received packets
+            tx=os.popen("cat "+ping_file_name+" | grep transmitted | awk '{print $1}'").read() # transmitted packets
+
             try:
-                losses[probe_timeouts[0]] = int(tx)-int(rx)
+                losses[detection_timeouts[0]] = int(tx)-int(rx)
             except ValueError:
-                losses[probe_timeouts[0]] = 0       
-	    print 'losses =',losses
+                losses[detection_timeouts[0]] = 0       
+            print 'losses =',losses
 
         print
         pprint(losses)
