@@ -70,11 +70,11 @@ timestamp = datetime.datetime.fromtimestamp( time.time() ).strftime('%Y-%m-%d %H
 with open("SPIDER_results_final.txt", "a+") as out_file:
 	out_file.write("Simulation started "+str(timestamp)+"\n")
 
-# total number of realizations
 # NB: one realization produces one curve of fig7.
 # After fixing delta_7 and delta_5, fig7_ryu_app tests failure recovery swiping all the values of delta_6.
 # Each realization is repeated REALIZATIONS_NUM times.
 # NB2: if more than one value is provided in INTERARRIVAL_VALUES, the script will create mulltiple PNG files.
+# total number of realizations
 tot_sim=len(INTERARRIVAL_VALUES)*len(DELTA_7_VALUES)*REALIZATIONS_NUM
 
 i=0 # index of current realization
