@@ -1,0 +1,7 @@
+$ sudo python table2.py
+
+This script:
+-prints data on screen
+-stores data in tmp/{net}{E2E PP/greedy}.txt
+
+Simulations parameters can be tuned in table2.py.
