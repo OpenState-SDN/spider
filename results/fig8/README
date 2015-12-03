@@ -1,0 +1,7 @@
+$ sudo python fig8.py
+
+This script:
+-prints coordinates data for LateX
+-creates many PNG files /home/mininet/spider/results/fig8/fig8_HB_rate_{HB_rate}.png
+
+Simulations parameters can be tuned in fig8.py.
