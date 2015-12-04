@@ -1,0 +1,8 @@
+$ sudo python fig9.py
+
+This script:
+-prints data on screen
+-prints LateX data on screen
+-stores data in ~/total_lost_packets_OF.txt and ~/total_lost_packets_SPIDER
+
+Simulations parameters can be tuned in fig9.py.
