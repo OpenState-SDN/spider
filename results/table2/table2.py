@@ -242,8 +242,8 @@ def process_network_AMPL_model(net_name,out_q):
 if __name__ == '__main__':
 
 	MULTIPROCESSING = False
-	NXN_range = range(5,16)
-	networks_list = []#['polska','norway','fat_tree']
+	NXN_range = [5,6,7] # range(5,16) needs a lot of RAM!
+	networks_list = [] #['polska','norway','fat_tree']
 	out_q = mp.Queue()
 	flow_entries_statistics = {}
 
@@ -279,13 +279,13 @@ if __name__ == '__main__':
 		for N in NXN_range:
 			stats = process_NxN_E2E_PP(N,out_q)
 			flow_entries_statistics[stats[0]] = stats[1]
-			stats = process_NxN_greedy(N,out_q)
-			flow_entries_statistics[stats[0]] = stats[1]
+			'''stats = process_NxN_greedy(N,out_q)
+			flow_entries_statistics[stats[0]] = stats[1]'''
 		for net_name in networks_list:
 			stats = process_network_E2E_PP(net_name,out_q)
 			flow_entries_statistics[stats[0]] = stats[1]
-			stats = process_network_AMPL_model(net_name,out_q)
-			flow_entries_statistics[stats[0]] = stats[1]
+			'''stats = process_network_AMPL_model(net_name,out_q)
+			flow_entries_statistics[stats[0]] = stats[1]'''
 
 	print
 	print
