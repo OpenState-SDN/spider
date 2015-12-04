@@ -137,7 +137,7 @@ def process_NxN_E2E_PP(N,out_q):
 	(requests,faults) = create_requests_faults_dict(fc.pps,fc.bps)
 	# fictitious filename, just to caching purpose
 	filename=str(N)+'X'+str(N)+'E2E.txt'
-	(fault_ID, flow_entries_dict, flow_entries_with_timeout_dict, flow_entries_with_burst_dict) = f_t_parser.generate_flow_entries_dict(requests,faults,ports_dict,match_flow=f_t_parser.get_mac_match_mininet,check_cache=False,filename=filename,confirm_cache_loading=False)
+	(fault_ID, flow_entries_dict, flow_entries_with_timeout_dict, flow_entries_with_burst_dict) = f_t_parser.generate_flow_entries_dict(requests,faults,ports_dict,match_flow=f_t_parser.get_mac_match_mininet,check_cache=False,filename=filename,confirm_cache_loading=False,dpctl_script=False)
 	
 	flow_stats_dict = f_t_parser.get_flow_stats_dict(flow_entries_dict)
 	tot_flows = [flow_stats_dict[node]['tot_flows'] for node in flow_stats_dict.keys() if node!='global']
@@ -158,7 +158,7 @@ def process_NxN_greedy(N,out_q):
 	(requests,faults) = create_requests_faults_dict(fc.pps,fc.bps)
 	# fictitious filename, just to caching purpose
 	filename=str(N)+'X'+str(N)+'greedy.txt'
-	(fault_ID, flow_entries_dict, flow_entries_with_timeout_dict, flow_entries_with_burst_dict) = f_t_parser.generate_flow_entries_dict(requests,faults,ports_dict,match_flow=f_t_parser.get_mac_match_mininet,check_cache=False,filename=filename,confirm_cache_loading=False)
+	(fault_ID, flow_entries_dict, flow_entries_with_timeout_dict, flow_entries_with_burst_dict) = f_t_parser.generate_flow_entries_dict(requests,faults,ports_dict,match_flow=f_t_parser.get_mac_match_mininet,check_cache=False,filename=filename,confirm_cache_loading=False,dpctl_script=False)
 
 	flow_stats_dict = f_t_parser.get_flow_stats_dict(flow_entries_dict)
 	tot_flows = [flow_stats_dict[node]['tot_flows'] for node in flow_stats_dict.keys() if node!='global']
@@ -197,7 +197,7 @@ def process_network_E2E_PP(net_name,out_q):
 		G_dir.edge[e[0]][e[1]] = {'capacity': N*N*10}
 	fc = execute_instance(G_dir, demands, bp_node_disj=True)
 	(requests_E2E,faults_E2E) = create_requests_faults_dict(fc.pps,fc.bps)
-	(fault_ID, flow_entries_dict, flow_entries_with_timeout_dict, flow_entries_with_burst_dict) = f_t_parser.generate_flow_entries_dict(requests_E2E,faults_E2E,ports_dict,match_flow=f_t_parser.get_mac_match_mininet,check_cache=False,filename=filename_res+"E2E",confirm_cache_loading=False)
+	(fault_ID, flow_entries_dict, flow_entries_with_timeout_dict, flow_entries_with_burst_dict) = f_t_parser.generate_flow_entries_dict(requests_E2E,faults_E2E,ports_dict,match_flow=f_t_parser.get_mac_match_mininet,check_cache=False,filename=filename_res+"E2E",confirm_cache_loading=False,dpctl_script=False)
 
 	flow_stats_dict = f_t_parser.get_flow_stats_dict(flow_entries_dict)
 	tot_flows = [flow_stats_dict[node]['tot_flows'] for node in flow_stats_dict.keys() if node!='global']
@@ -222,7 +222,7 @@ def process_network_AMPL_model(net_name,out_q):
 	ports_dict = f_t_parser.adapt_mn_topo_ports_to_old_API(mn_topo.ports)
 
 	print "\n# Smart instance "+net_name+" with results from AMPL model..."
-	(fault_ID, flow_entries_dict, flow_entries_with_timeout_dict, flow_entries_with_burst_dict) = f_t_parser.generate_flow_entries_dict(requests,faults,ports_dict,match_flow=f_t_parser.get_mac_match_mininet,check_cache=False,filename=filename_res,confirm_cache_loading=False)
+	(fault_ID, flow_entries_dict, flow_entries_with_timeout_dict, flow_entries_with_burst_dict) = f_t_parser.generate_flow_entries_dict(requests,faults,ports_dict,match_flow=f_t_parser.get_mac_match_mininet,check_cache=False,filename=filename_res,confirm_cache_loading=False,dpctl_script=False)
 	
 	flow_stats_dict = f_t_parser.get_flow_stats_dict(flow_entries_dict)
 	tot_flows = [flow_stats_dict[node]['tot_flows'] for node in flow_stats_dict.keys() if node!='global']
