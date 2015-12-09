@@ -18,10 +18,10 @@ import itertools
 ################################################################################################################################
 
 # Number of realizations
-REALIZATIONS_NUM = 10
+REALIZATIONS_NUM = 20
 
 INDIVIDUAL_TRAFFIC_RATE = 100 # [pkt/sec]
-REQUESTS_RANGE = [5,15,25,35]
+REQUESTS_RANGE = [5,10,15,20,25,30,35]
 
 LINK_DOWN = 5 # [sec]
 LINK_UP   = 5 # [sec]
@@ -212,7 +212,8 @@ for N in REQUESTS_RANGE:
 			if not delay in tot_lost_ping_OF[N]:
 				tot_lost_ping_OF[N][delay] = []
 			tot_lost_ping_OF[N][delay].append(sum(lost)) # total number of packets with no reply
-			os.system('for file in /home/mininet/ping_OF*.'+str(delay)+'rtt.sim'+str(sim_num)+'.txt; do mv "$file" "${file%.txt}'+'.OF.simnum'+str(sim_num)+'.bak"; done')
+			#os.system('for file in /home/mininet/ping_OF*.'+str(delay)+'rtt.sim'+str(sim_num)+'.txt; do mv "$file" "${file%.txt}'+'.OF.simnum'+str(sim_num)+'.bak"; done')
+			os.system('for file in /home/mininet/ping_OF*.'+str(delay)+'rtt.sim'+str(sim_num)+'.txt; do rm "$file"; done')
 	i+=1
 
 	# launch controller
@@ -231,7 +232,8 @@ for N in REQUESTS_RANGE:
 		if N not in tot_lost_ping_SPIDER:
 			tot_lost_ping_SPIDER[N] = []
 		tot_lost_ping_SPIDER[N].append(sum(lost)) # total number of packets with no reply
-		os.system('for file in /home/mininet/ping_SPIDER*.sim'+str(sim_num)+'.txt; do mv "$file" "${file%.txt}'+'.SPIDER.simnum'+str(sim_num)+'.bak"; done')
+		#os.system('for file in /home/mininet/ping_SPIDER*.sim'+str(sim_num)+'.txt; do mv "$file" "${file%.txt}'+'.SPIDER.simnum'+str(sim_num)+'.bak"; done')
+		os.system('for file in /home/mininet/ping_SPIDER*.sim'+str(sim_num)+'.txt; do rm "$file"; done')
 	i+=1
 
 pprint(tot_lost_ping_OF)
